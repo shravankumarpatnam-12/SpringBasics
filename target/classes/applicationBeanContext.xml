@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="example" class="com.example.bean.Example">
+        <constructor-arg name="messageExample" value="This is Example bean"></constructor-arg>
+        <!--<property name="messageExample" value="This is my Example1 Bean"></property>-->
+    </bean>
+    <bean id="firstBeanExample" class="com.example.bean.BeanExample">
+        <!--<property name="message" value="This is my First Bean"></property>-->
+        <!--<constructor-arg value="This is no-arg constructor"></constructor-arg>-->
+        <!--<constructor-arg name="message" value="This is arg constructor"></constructor-arg>-->
+        <constructor-arg ref="example"></constructor-arg>
+        <constructor-arg name="message" value="This is arg constructor"></constructor-arg>
+    </bean>
+
+</beans>

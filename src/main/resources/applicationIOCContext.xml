@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="savingsAccountBean" class="com.IOC.loose.coupling.SavingsAccount">
+        <constructor-arg name="accountNumber" value="10001" type="int"></constructor-arg>
+        <constructor-arg name="balance" value="500.00" type="double"></constructor-arg>
+        <constructor-arg name="openedDate" value="2024-01-01" type="java.lang.String" ></constructor-arg>
+        <constructor-arg name="isActive" value="true" type="boolean"></constructor-arg>
+    </bean>
+    <bean id="salaryAccountBean" class="com.IOC.loose.coupling.SalaryAccount">
+        <constructor-arg name="accountNumber" value="10002" type="int"></constructor-arg>
+        <constructor-arg name="employeeId" value="500000" type="int"></constructor-arg>
+        <constructor-arg name="interestRate" value="5.61" type="double" ></constructor-arg>
+        <constructor-arg name="employerName" value="Raj"></constructor-arg>
+        <constructor-arg name="balance" value="1000.00" type="double"></constructor-arg>
+        <constructor-arg name="isSalaryCreditedThisMonth" value="true" type="boolean"></constructor-arg>
+        <constructor-arg name="lastSalaryDate" value="2024-01-05" type="java.lang.String" ></constructor-arg>
+        <constructor-arg name="openedDate" value="2024-01-01" ></constructor-arg>
+        <constructor-arg name="isActive" value="true" type="boolean"></constructor-arg>
+    </bean>
+    <bean id="nriAccountBean" class="com.IOC.loose.coupling.NRIAccount">
+        <constructor-arg name="accountNumber" value="10002" type="int"></constructor-arg>
+        <constructor-arg name="nriType" value="NRE" ></constructor-arg>
+        <constructor-arg name="countryOfResidence" value="USA"></constructor-arg>
+        <constructor-arg name="balance" value="1000.00" type="double"></constructor-arg>
+        <constructor-arg name="interestRate" value="5.61" type="double" ></constructor-arg>
+        <constructor-arg name="currency" value="USD"></constructor-arg>
+        <constructor-arg name="openedDate" value="2024-01-01" ></constructor-arg>
+        <constructor-arg name="isActive" value="true" type="boolean"></constructor-arg>
+    </bean>
+<!--    <bean id="fixedDepositBean" class="com.IOC.loose.coupling.FixedDeposit">-->
+
+<!--    </bean>-->
+<!--    <bean id="currentAccount" class="com.IOC.loose.coupling.CurrentAccount">-->
+
+<!--    </bean>-->
+    <bean id="customerBean" class="com.IOC.loose.coupling.Customer">
+        <constructor-arg name="firstName" value="Raj"></constructor-arg>
+        <constructor-arg name="lastName" value="Kumar"></constructor-arg>
+        <constructor-arg name="email" value="raj@gmail.com"></constructor-arg>
+        <constructor-arg name="phoneNumber" value="04842984243"></constructor-arg>
+        <constructor-arg ref="savingsAccountBean"></constructor-arg>
+    </bean>
+
+    <bean id="customerBean1" class="com.IOC.loose.coupling.Customer">
+        <constructor-arg name="firstName" value="Raj"></constructor-arg>
+        <constructor-arg name="lastName" value="Kumar"></constructor-arg>
+        <constructor-arg name="email" value="raj@gmail.com"></constructor-arg>
+        <constructor-arg name="phoneNumber" value="04842984243"></constructor-arg>
+        <constructor-arg ref="salaryAccountBean"></constructor-arg>
+    </bean>
+
+    <bean id="customerBean2" class="com.IOC.loose.coupling.Customer">
+        <constructor-arg name="firstName" value="Raj"></constructor-arg>
+        <constructor-arg name="lastName" value="Kumar"></constructor-arg>
+        <constructor-arg name="email" value="raj@gmail.com"></constructor-arg>
+        <constructor-arg name="phoneNumber" value="04842984243"></constructor-arg>
+        <constructor-arg ref="nriAccountBean"></constructor-arg>
+    </bean>
+
+</beans>
